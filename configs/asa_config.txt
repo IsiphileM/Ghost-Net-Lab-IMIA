@@ -1,0 +1,72 @@
+Firewall>en
+Password: 
+Invalid password
+Password: 
+Firewall#
+Firewall#show running-config
+: Saved
+:
+ASA Version 8.4(2)
+!
+hostname Firewall
+names
+!
+interface Ethernet0/0
+ switchport access vlan 2
+!
+interface Ethernet0/1
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+interface Ethernet0/4
+!
+interface Ethernet0/5
+!
+interface Ethernet0/6
+!
+interface Ethernet0/7
+!
+interface Vlan1
+ nameif inside
+ security-level 100
+ ip address 192.168.1.1 255.255.255.0
+!
+interface Vlan2
+ nameif outside
+ security-level 0
+ ip address 203.0.113.2 255.255.255.252
+!
+object network IMIAInternal
+ subnet 10.0.0.0 255.0.0.0
+ nat (inside,outside) dynamic interface
+object network IMIAServers
+ host 10.0.50.11
+!
+route inside 10.0.0.0 255.0.0.0 192.168.1.2 1
+!
+!
+!
+!
+!
+class-map CM_INSPECT_ICMP
+ match default-inspection-traffic
+!
+policy-map global_policy
+ class CM_INSPECT_ICMP
+  inspect icmp 
+!
+service-policy global_policy global
+!
+telnet timeout 5
+ssh timeout 5
+!
+dhcpd auto_config outside
+!
+!
+!
+!
+!
+!
+Firewall#
