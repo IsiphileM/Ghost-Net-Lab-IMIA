@@ -6,7 +6,7 @@
 ---
 
 ## Executive Summary
-Project **IMIA** (Isiphile Maqhashu International Airport) is a high-availability network architecture designed to handle the complex traffic requirements of a modern aviation hub. This project serves as a capstone implementation of a **Zero-Trust** security philosophy, ensuring that critical airport systems—such as **Air Traffic Control (ATC)**—are logically and physically isolated from public-facing services.
+Project **IMIA** (Isiphile Maqhashu International Airport) is a high-availability network architecture designed to handle the complex traffic requirements of a modern aviation hub. This project serves as a capstone implementation of a **Zero-Trust** security philosophy, ensuring that critical airport systems - such as **Air Traffic Control (ATC)** - are logically and physically isolated from public-facing services.
 
 ## Architecture & Topology
 The infrastructure utilizes a three-tier hierarchical model, centering on the **GhostCore01** Multilayer Switch and the **Cisco ASA 5505 Firewall**.
